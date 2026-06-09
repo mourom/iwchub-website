@@ -623,8 +623,8 @@
     <div class="lao01">
     <div class="lao01a flex spjz czjz wrap w1200">
         <div class="lao01a_a flex spjz czjz wrap">
-            <form method="post" id="searchform" class="search-form lao01a_aa flex spjz czjz wrap search_js1"
-                action="/e/search/index.php" onsubmit="return search_check(document.search_js1);">
+            <form method="get" id="searchform" class="search-form lao01a_aa flex spjz czjz wrap search_js1"
+                action="http://www.iwchub.cn/e/search/index.php" target="_blank" onsubmit="return search_check(this);">
                 <input value="title,smalltext,newstext,writer" type="hidden" name="show">
                 <input class="input-keyword lao01a_aa_a searchInput" value="搜索问题或附近的万国维修服务中心"
                     onblur="if(this.value=='') this.value='搜索问题或附近的万国维修服务中心';"
@@ -2336,6 +2336,17 @@ document.addEventListener('DOMContentLoaded', function() {
         <a class="icon iconfont ycfix002 flex spjz czjz ycfixnsize smyycyc">&#xe64a;</a>
     </li>
 </ul>
+<script type="text/javascript">
+// 搜索表单校验
+function search_check(form) {
+    var kw = form.keyboard;
+    if (!kw || kw.value === '' || kw.value === '搜索问题或附近的万国维修服务中心') {
+        alert('请输入搜索关键词');
+        return false;
+    }
+    return true;
+}
+</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
 <script type="text/javascript" src="./js/touchslide.js"></script>
 <!-- removed: swt_in.js chat widget -->
